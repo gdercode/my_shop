@@ -11,7 +11,8 @@
 <body>
     <div class="container">
         <h1> Registration Form </h1>
-        <form method="POST" action="">
+        <form method="POST" action="{{ route('register_user') }}">
+            @csrf
             <input type="text" name="user_name" placeholder="User name" required>
             <input type="email" name="email" placeholder="email" required>
             <input type="password" name="password" placeholder="password" required>

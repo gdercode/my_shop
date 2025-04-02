@@ -15,4 +15,15 @@ class MainController extends Controller
     {
         return view('registration');
     }
+
+
+    public function store_user(Request $request)
+    {
+        dd('MWARAMUTSE');
+
+        return response('dsaffadsf');
+    }
+
+
+
 }

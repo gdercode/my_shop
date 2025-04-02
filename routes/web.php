@@ -16,3 +16,8 @@ Route::get(
     '/register',
     [MainController::class, 'registration_form']
 )->name('registration');
+
+Route::post(
+    '/register',
+    [MainController::class, 'store_user']
+)->name('register_user');
