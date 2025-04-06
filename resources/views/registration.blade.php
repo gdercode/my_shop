@@ -17,6 +17,10 @@
             @endforeach
         </ul>
     @endif
+    @if (session('success'))
+        <p>{{ session('success') }}</p>
+    @endif
+
 
     <div class="container">
         <h1> Registration Form </h1>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash; 
 
 class MainController extends Controller
 {
@@ -24,6 +26,17 @@ class MainController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
+
+        User::create([
+            'name' => $request->user_name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+
+        return redirect()->back()->with(
+            'success',
+            'Acount Created!'
+        );
 
     }
 
