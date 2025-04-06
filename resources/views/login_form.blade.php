@@ -8,9 +8,22 @@
 
 <body>
     <div class="container">
+
+
+        @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li> {{ $error }} </li>
+                @endforeach
+            </ul>
+        @endif
+        @if (session('success'))
+            <p>{{ session('success') }}</p>
+        @endif
         <h1> Login Form </h1>
 
-        <form method="POST" action="">
+        <form method="POST" action="{{ route('signin') }}">
+            @csrf
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="password" required>
             <button type="submit">Login</button>

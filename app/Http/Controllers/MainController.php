@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash; 
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
@@ -38,6 +39,27 @@ class MainController extends Controller
             'Acount Created!'
         );
 
+    }
+
+    public function signin(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->route('home_page');
+        } else {
+            return redirect()->back()->with(
+                'success',
+                'Invalid Login'
+            );
+        } 
+    } 
+    public function home_page()
+    {
+        return view('home_page');
     }
 
 

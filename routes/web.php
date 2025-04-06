@@ -21,3 +21,13 @@ Route::post(
     '/register',
     [MainController::class, 'store_user']
 )->name('register_user');
+
+Route::post(
+    '/login',
+    [MainController::class, 'signin']
+)->name('signin');
+
+Route::get(
+    '/home_page',
+    [MainController::class, 'home_page']
+)->name('home_page');
