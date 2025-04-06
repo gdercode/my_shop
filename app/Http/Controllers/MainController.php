@@ -19,9 +19,12 @@ class MainController extends Controller
 
     public function store_user(Request $request)
     {
-        dd('MWARAMUTSE');
+        $request->validate([
+            'user_name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
 
-        return response('dsaffadsf');
     }
 
 

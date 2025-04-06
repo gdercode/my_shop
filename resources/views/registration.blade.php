@@ -9,13 +9,22 @@
 </head>
 
 <body>
+
+    @if ($errors->any())
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li> {{ $error }} </li>
+            @endforeach
+        </ul>
+    @endif
+
     <div class="container">
         <h1> Registration Form </h1>
         <form method="POST" action="{{ route('register_user') }}">
             @csrf
-            <input type="text" name="user_name" placeholder="User name" required>
-            <input type="email" name="email" placeholder="email" required>
-            <input type="password" name="password" placeholder="password" required>
+            <input type="text" name="user_name" placeholder="User name">
+            <input type="email" name="email" placeholder="email">
+            <input type="password" name="password" placeholder="password">
             <button type="submit">Register</button>
         </form>
         <p> Already have an account? <a href="{{ route('login') }}">Login</a></p>
