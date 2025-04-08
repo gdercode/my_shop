@@ -55,8 +55,18 @@ class MainController extends Controller
                 'success',
                 'Invalid Login'
             );
-        } 
-    } 
+        }
+    }
+
+    public function logout_page()
+    {
+        Auth::logout();
+        return redirect()->route('login');
+    }
+
+
+
+
     public function home_page()
     {
         return view('home_page');

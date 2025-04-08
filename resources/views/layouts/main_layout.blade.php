@@ -14,11 +14,11 @@
             <ul class="menu">
                 <li><a href="">Home</a></li>
                 <li><a href="">New Product</a></li>
-                <li><a href="">logout</a></li>
+                <li><a href="{{ route('logout') }}">logout</a></li>
             </ul>
         </div>
     </nav>
- 
+
     <div class="container">
         @auth
             <b class="success"> {{ auth()->user()->name }} </b>

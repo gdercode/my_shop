@@ -30,4 +30,9 @@ Route::post(
 Route::get(
     '/home_page',
     [MainController::class, 'home_page']
-)->name('home_page');
+)->middleware('auth')->name('home_page');
+
+Route::get(
+    '/logout',
+    [MainController::class, 'logout_page']
+)->name('logout');
