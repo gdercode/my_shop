@@ -13,7 +13,7 @@
             <a class="brand" href="{{ route('home_page') }}">E-Commerce</a>
             <ul class="menu">
                 <li><a href="">Home</a></li>
-                <li><a href="">New Product</a></li>
+                <li><a href="{{ route('product_form') }}">New Product</a></li>
                 <li><a href="{{ route('logout') }}">logout</a></li>
             </ul>
         </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -36,3 +37,9 @@ Route::get(
     '/logout',
     [MainController::class, 'logout_page']
 )->name('logout');
+
+
+Route::get(
+    '/product_form',
+    [ProductController::class, 'product_form']
+)->middleware('auth')->name('product_form');
