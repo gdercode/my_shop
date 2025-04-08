@@ -4,7 +4,7 @@
     <div class="container">
         <h1 class="content">Create New Product</h1>
 
-        <form action="{{ route('store_product') }}" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-row">
