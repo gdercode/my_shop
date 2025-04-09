@@ -43,3 +43,11 @@ Route::get(
     '/product_form',
     [ProductController::class, 'product_form']
 )->middleware('auth')->name('product_form');
+
+
+Route::post(
+    '/register_product',
+    [ProductController::class, 'register_product']
+)->middleware('auth')->name('register_product');
+
+
