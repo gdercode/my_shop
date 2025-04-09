@@ -19,8 +19,17 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required',
             'stock_quantity' => 'required',
-            'image' => 'nullable',
+            'image_path' => 'nullable',
         ]);
+
+        if ($request->hasFile('image_path')) {
+            $imageName = $request->file('image_path')->getClientOriginalName();
+            $request->file('image_path')->move(
+                public_path('product_images')
+            );
+            $validated_product['image_path'] = $imageName;
+        }
+
 
         Product::create($validated_product);
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -69,7 +70,9 @@ class MainController extends Controller
 
     public function home_page()
     {
-        return view('home_page');
+
+        $products = Product::all();
+        return view('home_page', ['products' => $products]);
     }
 
 

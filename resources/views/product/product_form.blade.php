@@ -26,7 +26,7 @@
 
             <div class="form-row">
                 <label for="image">Product Image:</label>
-                <input type="file" name="image" class="form-control">
+                <input type="file" name="image_path" class="form-control">
             </div>
 
             <br>
