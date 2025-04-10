@@ -70,7 +70,6 @@ class MainController extends Controller
 
     public function home_page()
     {
-
         $products = Product::all();
         return view('home_page', ['products' => $products]);
     }

@@ -25,7 +25,8 @@ class ProductController extends Controller
         if ($request->hasFile('image_path')) {
             $imageName = $request->file('image_path')->getClientOriginalName();
             $request->file('image_path')->move(
-                public_path('product_images')
+                public_path('product_images'),
+                $imageName
             );
             $validated_product['image_path'] = $imageName;
         }
