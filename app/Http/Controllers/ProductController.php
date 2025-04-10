@@ -39,4 +39,14 @@ class ProductController extends Controller
             'Product created successfully!'
         );
     }
+
+    public function delete_product($id)
+    {
+        $product = Product::where('id', $id)->first();
+        $product->delete();
+        return redirect()->route('home_page')->with(
+            'success',
+            'Product Deleted!'
+        );
+    }
 }

@@ -50,4 +50,9 @@ Route::post(
     [ProductController::class, 'register_product']
 )->middleware('auth')->name('register_product');
 
+Route::get(
+    '/delete_product/{id}',
+    [ProductController::class, 'delete_product']
+)->middleware('auth')->name('delete_product');
+
 
