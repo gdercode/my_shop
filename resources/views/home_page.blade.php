@@ -12,6 +12,14 @@
                 <p>Price : $ {{ $one_product->price }}</p>
                 <p>Stock Quantity : {{ $one_product->stock_quantity }}</p>
                 <p><a href="{{ route('delete_product', $one_product->id) }}">Delete</a></p>
+                <p>
+                <form method="post" action="{{ route('sell_product', $one_product->id) }}">
+                    @csrf
+                    <input type="text" name="sold_quantity" placeholder="Sold quantity">
+                    <button type="submit">Sell</button>
+                </form>
+                </p>
+
             </div>
         @endforeach
     </div>

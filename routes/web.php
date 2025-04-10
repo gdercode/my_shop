@@ -55,4 +55,9 @@ Route::get(
     [ProductController::class, 'delete_product']
 )->middleware('auth')->name('delete_product');
 
+Route::post(
+    '/sell_product/{id}',
+    [ProductController::class, 'sell_product']
+)->middleware('auth')->name('sell_product');
+
 

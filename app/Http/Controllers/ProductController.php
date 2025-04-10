@@ -49,4 +49,17 @@ class ProductController extends Controller
             'Product Deleted!'
         );
     }
+
+
+    public function sell_product(Request $request, $id)
+    {
+        $product = Product::where('id', $id)->first();
+        $new_quantity = $request->input('sold_quantity');
+
+        $product->stock_quantity = $product->stock_quantity - $new_quantity;
+        $product->save();
+
+        return redirect()->back()->with('success', "Thank You For coming!");
+
+    }
 }
